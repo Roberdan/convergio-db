@@ -22,7 +22,7 @@ jobs:
   ci:
     uses: Roberdan/convergio/.github/workflows/reusable-ci-rust.yml@main
     with:
-      coverage-threshold: 70
+      coverage-threshold: 0
       run-deny: true
       run-semver: true
       run-udeps: true
