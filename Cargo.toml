@@ -3,14 +3,14 @@ resolver = "2"
 members = ["crates/convergio-db"]
 
 [workspace.package]
-version = "0.1.1"
+version = "0.1.2"
 edition = "2021"
 license = "LicenseRef-Convergio-Community"
 repository = "https://github.com/Roberdan/convergio-db"
 
 [workspace.dependencies]
 # SDK dependencies
-convergio-types = { git = "https://github.com/Roberdan/convergio-sdk", tag = "convergio-sdk-v0.1.4" }
+convergio-types = { git = "https://github.com/Roberdan/convergio-sdk", tag = "convergio-sdk-v0.1.6" }
 
 # Common deps — pin same versions as SDK for compatibility
 rusqlite = { version = "0.32", features = ["bundled"] }
