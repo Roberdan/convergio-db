@@ -1,21 +1,13 @@
-//! # convergio-db
+//! convergio-db — Database pool, migration runner, schema registry.
 //!
-//! Database pool, migration runner, schema registry
-//!
-//! Part of the [Convergio](https://github.com/Roberdan/convergio) ecosystem.
+//! Provides r2d2 pool, collects migrations from all extensions,
+//! tracks applied versions in `_schema_registry`.
 
+pub mod core_tables;
+pub mod ext;
+pub mod helpers;
+pub mod migration;
+pub mod pool;
 pub mod routes;
 
-// Uncomment as needed:
-// pub mod ext;
-// pub mod mcp_defs;
-// pub mod schema;
-// pub mod types;
-
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert!(true);
-    }
-}
+pub use ext::DbExtension;

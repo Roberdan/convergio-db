@@ -28,6 +28,10 @@ confidence-threshold = 0.8
 allow = ["LicenseRef-Convergio-Community"]
 crate = "convergio-db"
 
+[[licenses.exceptions]]
+allow = ["LicenseRef-Convergio-Community"]
+crate = "convergio-types"
+
 [bans]
 multiple-versions = "warn"
 wildcards = "allow"  # workspace deps use wildcards internally

@@ -10,17 +10,11 @@ repository = "https://github.com/Roberdan/convergio-db"
 
 [workspace.dependencies]
 # SDK dependencies
-convergio-types = { git = "https://github.com/Roberdan/convergio-sdk", tag = "v0.1.0" }
-# Uncomment as needed:
-# convergio-telemetry = { git = "https://github.com/Roberdan/convergio-sdk", tag = "v0.1.0" }
-# convergio-security = { git = "https://github.com/Roberdan/convergio-sdk", tag = "v0.1.0" }
-# convergio-db = { git = "https://github.com/Roberdan/convergio-sdk", tag = "v0.1.0" }
+convergio-types = { git = "https://github.com/Roberdan/convergio-sdk", tag = "convergio-sdk-v0.1.4" }
 
 # Common deps — pin same versions as SDK for compatibility
-thiserror = "1"
-chrono = { version = "0.4", features = ["serde"] }
-serde = { version = "1.0", features = ["derive"] }
-serde_json = "1.0"
-tokio = { version = "1.44", features = ["macros", "rt-multi-thread", "signal", "sync", "time", "fs", "io-util"] }
+rusqlite = { version = "0.32", features = ["bundled"] }
+r2d2 = "0.8"
+r2d2_sqlite = "0.25"
 tracing = "0.1"
-axum = { version = "0.7", features = ["ws", "multipart"] }
+axum = { version = "0.7" }
