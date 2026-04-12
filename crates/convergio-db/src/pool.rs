@@ -22,19 +22,15 @@ const PRAGMAS: &str = "\
 
 /// Create a connection pool for the given database path.
 pub fn create_pool(db_path: &Path) -> Result<ConnPool, r2d2::Error> {
-    let manager = SqliteConnectionManager::file(db_path).with_init(|conn| {
-        conn.execute_batch(PRAGMAS)
-            .map_err(|e| rusqlite::Error::ToSqlConversionFailure(Box::new(e)))
-    });
+    let manager =
+        SqliteConnectionManager::file(db_path).with_init(|conn| conn.execute_batch(PRAGMAS));
     Pool::builder().max_size(8).min_idle(Some(2)).build(manager)
 }
 
 /// Create an in-memory pool (for testing).
 pub fn create_memory_pool() -> Result<ConnPool, r2d2::Error> {
-    let manager = SqliteConnectionManager::memory().with_init(|conn| {
-        conn.execute_batch("PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000;")
-            .map_err(|e| rusqlite::Error::ToSqlConversionFailure(Box::new(e)))
-    });
+    let manager = SqliteConnectionManager::memory()
+        .with_init(|conn| conn.execute_batch("PRAGMA journal_mode=WAL; PRAGMA busy_timeout=5000;"));
     Pool::builder().max_size(1).build(manager)
 }
 
