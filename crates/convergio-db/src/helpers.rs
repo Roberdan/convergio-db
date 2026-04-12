@@ -18,13 +18,28 @@ pub fn column_exists(conn: &Connection, table: &str, column: &str) -> rusqlite::
 }
 
 /// Get all column names for a table.
+///
+/// The table name is validated to contain only safe identifier characters
+/// (alphanumeric, underscore, hyphen) to prevent SQL injection.
 pub fn get_column_names(conn: &Connection, table: &str) -> rusqlite::Result<Vec<String>> {
+    if !is_safe_identifier(table) {
+        return Err(rusqlite::Error::InvalidParameterName(format!(
+            "invalid table name: {table}"
+        )));
+    }
     let mut stmt = conn.prepare(&format!("PRAGMA table_info('{table}')"))?;
     let names = stmt
         .query_map([], |row| row.get::<_, String>(1))?
-        .filter_map(|r| r.ok())
-        .collect();
+        .collect::<Result<Vec<_>, _>>()?;
     Ok(names)
+}
+
+/// Returns true if the identifier contains only safe characters.
+fn is_safe_identifier(name: &str) -> bool {
+    !name.is_empty()
+        && name
+            .bytes()
+            .all(|b| b.is_ascii_alphanumeric() || b == b'_' || b == b'-')
 }
 
 /// Check if an index exists.
@@ -89,5 +104,12 @@ mod tests {
         let conn = test_conn();
         let cols = get_column_names(&conn, "example").unwrap();
         assert_eq!(cols, vec!["id", "name", "age"]);
+    }
+
+    #[test]
+    fn rejects_unsafe_table_name() {
+        let conn = test_conn();
+        let result = get_column_names(&conn, "'; DROP TABLE example; --");
+        assert!(result.is_err());
     }
 }
