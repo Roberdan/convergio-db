@@ -10,7 +10,7 @@ repository = "https://github.com/Roberdan/convergio-db"
 
 [workspace.dependencies]
 # SDK dependencies
-convergio-types = { git = "https://github.com/Roberdan/convergio-sdk", tag = "v0.1.7" }
+convergio-types = { git = "https://github.com/Roberdan/convergio-sdk", tag = "v0.1.9" }
 
 # Common deps — pin same versions as SDK for compatibility
 rusqlite = { version = "0.32", features = ["bundled"] }
