@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.3](https://github.com/Roberdan/convergio-db/compare/convergio-db-v0.1.2...convergio-db-v0.1.3) (2026-04-12)
+
+
+### Bug Fixes
+
+* align SDK dependency to v0.1.9 for type compatibility ([31b4b3d](https://github.com/Roberdan/convergio-db/commit/31b4b3d525b3c0f6616b5cd28f819d29f6f11c44))
+
 ## [0.1.2](https://github.com/Roberdan/convergio-db/compare/convergio-db-v0.1.1...convergio-db-v0.1.2) (2026-04-12)
 
 
