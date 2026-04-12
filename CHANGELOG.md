@@ -1,5 +1,17 @@
 # Changelog
 
+## [0.1.2](https://github.com/Roberdan/convergio-db/compare/convergio-db-v0.1.1...convergio-db-v0.1.2) (2026-04-12)
+
+
+### Bug Fixes
+
+* audit improvements - security hardening and bug fixes ([#3](https://github.com/Roberdan/convergio-db/issues/3)) ([9f1b5cb](https://github.com/Roberdan/convergio-db/commit/9f1b5cb40554e2bb7676b44699b41d6ec57719ce))
+
+
+### Documentation
+
+* copy ADR from monorepo ([633fbe4](https://github.com/Roberdan/convergio-db/commit/633fbe457c5a0e32e816c7df415612aea2506068))
+
 ## [0.1.1](https://github.com/Roberdan/convergio-db/compare/convergio-db-v0.1.0...convergio-db-v0.1.1) (2026-04-11)
 
 
