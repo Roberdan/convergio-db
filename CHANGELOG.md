@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.4](https://github.com/Roberdan/convergio-db/compare/convergio-db-v0.1.3...convergio-db-v0.1.4) (2026-04-13)
+
+
+### Bug Fixes
+
+* pass CARGO_REGISTRY_TOKEN to release workflow ([0f8d956](https://github.com/Roberdan/convergio-db/commit/0f8d9561e71cac36e4a4a8b08507acb319891a93))
+
 ## [0.1.3](https://github.com/Roberdan/convergio-db/compare/convergio-db-v0.1.2...convergio-db-v0.1.3) (2026-04-12)
 
 
