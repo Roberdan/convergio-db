@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.5](https://github.com/Roberdan/convergio-db/compare/convergio-db-v0.1.4...convergio-db-v0.1.5) (2026-04-18)
+
+
+### Bug Fixes
+
+* security and quality audit pass 2 ([8968cb2](https://github.com/Roberdan/convergio-db/commit/8968cb29ed721a104f38682b2828c89d4f5ba15b))
+
 ## [0.1.4](https://github.com/Roberdan/convergio-db/compare/convergio-db-v0.1.3...convergio-db-v0.1.4) (2026-04-13)
 
 
